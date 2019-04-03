@@ -1,0 +1,170 @@
+{
+  "data": {
+    "users": [
+      {
+        "email": "user1@facebook.com",
+        "firstName": "User 1",
+        "password": "$2a$10$SkI3zAT5G1ntxXjAJuHiZeo9tSqWPDpZaESaMhcgsf9LCmcwibwN2",
+        "createdAt": "2016-11-06T09:42:15.376Z",
+        "updatedAt": "2016-11-06T09:42:15.376Z",
+        "id": 1
+      },
+      {
+        "email": "user2@facebook.com",
+        "firstName": "User 2",
+        "password": "$2a$10$SkI3zAT5G1ntxXjAJuHiZeo9tSqWPDpZaESaMhcgsf9LCmcwibwN2",
+        "createdAt": "2016-11-06T09:42:15.376Z",
+        "updatedAt": "2016-11-06T09:42:15.376Z",
+        "id": 2
+      },
+      {
+        "firstName": "Random",
+        "email": "random@random.com",
+        "password": "$2a$10$ZJhAcQ5wYOlNxai5iGJGIOr5MSFM6bBSo/NPgWoT0vEGv21DSO2Ai",
+        "createdAt": "2019-03-30T10:53:41.583Z",
+        "updatedAt": "2019-03-30T10:53:41.583Z",
+        "id": 3
+      },
+      {
+        "firstName": "random",
+        "email": "random1@random.com",
+        "password": "$2a$10$fRi.YymZT6X0TZV.3TCFuezKdqMCL3kqm8dNXjXsQadqMFxiLhin.",
+        "createdAt": "2019-04-01T06:50:56.139Z",
+        "updatedAt": "2019-04-01T06:50:56.139Z",
+        "id": 4
+      }
+    ],
+    "tokens": [
+      {
+        "user": 1,
+        "type": "refresh",
+        "value": "GpDWszZrOoxkxhtkxQ2sN489n26bfNWf",
+        "expiresAt": "2019-05-30T07:29:44.343Z",
+        "createdAt": "2019-03-01T07:29:44.361Z",
+        "id": 2
+      },
+      {
+        "user": 3,
+        "type": "access",
+        "value": "AejJAHq00XdmJLVgNxYr8r0QLXK0QbyH",
+        "expiresAt": "2019-03-30T11:53:41.849Z",
+        "createdAt": "2019-03-30T10:53:41.870Z",
+        "id": 50
+      },
+      {
+        "user": 3,
+        "type": "refresh",
+        "value": "ec2w53WNfsuaVF7naetOI7Ds7Q4Tuasx",
+        "expiresAt": "2019-06-28T10:53:41.873Z",
+        "createdAt": "2019-03-30T10:53:41.888Z",
+        "id": 51
+      },
+      {
+        "user": 4,
+        "type": "access",
+        "value": "a5fttBboFVU6cTZoRhF2yDwKariEsKX4",
+        "expiresAt": "2019-04-01T07:50:56.474Z",
+        "createdAt": "2019-04-01T06:50:56.485Z",
+        "id": 59
+      },
+      {
+        "user": 4,
+        "type": "refresh",
+        "value": "dpujFOKJYklvnrFmxcVPreOXVW0D9Rv8",
+        "expiresAt": "2019-06-30T06:50:56.512Z",
+        "createdAt": "2019-04-01T06:50:56.519Z",
+        "id": 60
+      },
+      {
+        "user": 1,
+        "type": "access",
+        "value": "l7cgDaUSO4k51y3Vap1XBYPgBTzOCYpL",
+        "expiresAt": "2019-04-02T11:31:44.554Z",
+        "createdAt": "2019-04-02T10:31:44.771Z",
+        "id": 65
+      }
+    ],
+    "clients": [
+      {
+        "id": "8puWuJWZYls1Ylawxm6CMiYREhsGGSyw",
+        "name": "React-Native client",
+        "createdAt": "2016-11-06T14:18:06.096Z"
+      }
+    ]
+  },
+  "schema": {
+    "users": {
+      "email": {
+        "unique": true,
+        "type": "string"
+      },
+      "password": {
+        "type": "string"
+      },
+      "id": {
+        "type": "integer",
+        "autoIncrement": true,
+        "primaryKey": true,
+        "unique": true
+      },
+      "createdAt": {
+        "type": "datetime"
+      },
+      "updatedAt": {
+        "type": "datetime"
+      }
+    },
+    "tokens": {
+      "user": {
+        "type": "integer",
+        "model": "users",
+        "foreignKey": true,
+        "alias": "user"
+      },
+      "value": {
+        "type": "string"
+      },
+      "type": {
+        "type": "string",
+        "enum": [
+          "access",
+          "refresh"
+        ]
+      },
+      "expiresAt": {
+        "type": "date"
+      },
+      "id": {
+        "type": "integer",
+        "autoIncrement": true,
+        "primaryKey": true,
+        "unique": true
+      },
+      "createdAt": {
+        "type": "datetime"
+      }
+    },
+    "clients": {
+      "id": {
+        "type": "string",
+        "primaryKey": true,
+        "unique": true
+      },
+      "name": {
+        "type": "string"
+      },
+      "createdAt": {
+        "type": "datetime"
+      }
+    }
+  },
+  "counters": {
+    "users": {
+      "id": 4
+    },
+    "tokens": {
+      "id": 65
+    },
+    "clients": {}
+  }
+}
